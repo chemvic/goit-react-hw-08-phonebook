@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import { useAddContactMutation, useGetContactsQuery } from '../../redux/contactsApi';
+import { useAddContactMutation, useGetContactsQuery } from '../../redux/contacts/contactsApi';
 import css from "./ContactForm.module.css";
 
 
@@ -27,10 +27,10 @@ const handleSubmit = (event) => {
      
       const newContact={
         name,
-        phone: number,
+        number,
      }; 
       if(data.find(({name, number}) => name.toLowerCase()===(newContact.name.toLowerCase())
-              ||number===newContact.phone)){
+              ||number===newContact.number)){
                 alert(`${newContact.name} is already in contacts.`);
                 reset();
                 return;

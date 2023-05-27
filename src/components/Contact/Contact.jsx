@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { useDeleteContactMutation } from '../../redux/contactsApi';
+import { useDeleteContactMutation } from '../../redux/contacts/contactsApi';
 import css from "./Contact.module.css";
 
 const Contact=({name, number, id})=>{
