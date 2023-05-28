@@ -1,27 +1,24 @@
+import React from 'react';
 import { useDispatch } from 'react-redux';
+import { Button, Typography } from '@mui/material';
 import { logOut } from 'redux/auth/operations';
-// import {contactsApi} from "redux/contacts/contactsApi";
 import { useAuth } from '../../hooks/useAuth';
-import css from './UserMenu.module.css';
 
- const UserMenu = () => {
+const UserMenu = () => {
   const dispatch = useDispatch();
   const { user } = useAuth();
-  
-
- const cacheReset = () => {
-  dispatch(logOut());
-
-};
 
   return (
-    <div className={css.wrapper}>
-      <p className={css.user_email}> {user.email} </p>
-      <button type="button" onClick={cacheReset}>
+    <div  >
+    
+      <Typography variant="h6" >
+      {user.email} 
+       </Typography>
+      <Button onClick={()=>dispatch(logOut())} color="inherit">
         Logout
-      </button>
+      </Button>
     </div>
   );
 };
+
 export default UserMenu;
- 

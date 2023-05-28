@@ -12,7 +12,7 @@
 }
 
 .button:hover {
-    background: #89aaf0;
+    background: #1976d2;
   }
   .form {
     display: flex;
@@ -21,6 +21,7 @@
     border: 1px solid #212121;
     padding: 15px;
     width: 400px;
+    margin-bottom: 30px;
   }
   
   .form_lable {

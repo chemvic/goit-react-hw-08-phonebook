@@ -1,17 +1,30 @@
-import { Navigation } from '../Navigation/Navigation';
-import  UserMenu  from '../UserMenu/UserMenu';
-import AuthNav  from '../AuthNav';
+import React from 'react';
+import { AppBar, Toolbar, Typography } from '@mui/material';
+import UserMenu from '../UserMenu/UserMenu';
+import AuthNav from '../AuthNav';
 import { useAuth } from 'hooks';
-import css from './AppBar.module.css';
 
- const AppBar = () => {
+
+
+const CustomAppBar = () => {
+ 
   const { isLoggedIn } = useAuth();
 
   return (
-    <header className={css.header}>
-      <Navigation />
-      {isLoggedIn ? <UserMenu /> : <AuthNav />}
-    </header>
+    <AppBar position="static">
+      <Toolbar>
+            {!isLoggedIn &&   <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+<p>HOME</p> 
+       </Typography>} 
+     
+      {isLoggedIn &&   <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+<p>CONTACTS</p> 
+       </Typography>}     
+       
+        {isLoggedIn ? <UserMenu /> : <AuthNav />}
+      </Toolbar>
+    </AppBar>
   );
 };
-export default AppBar; 
+
+export default CustomAppBar;

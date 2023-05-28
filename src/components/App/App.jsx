@@ -9,10 +9,12 @@ import { refreshUser } from 'redux/auth/operations';
 import { useAuth } from 'hooks';
 
 const Contacts =lazy(()=>import("../pages/Contacts/Contacts"));
+const ContactList =lazy(()=>import("../ContactList/ContactList"));
 const Login =lazy(()=>import("../pages/Login"));
 const Register =lazy(()=>import("../pages/Register"));
 const Home =lazy(()=>import("../pages/Home/Home"));
 const NotFound =lazy(()=>import("../pages/NotFound"));
+
 
 
 const App =()=> { 
@@ -46,8 +48,11 @@ const App =()=> {
           path="/contacts"
           element={<PrivateRoute redirectTo="/login" component={<Contacts />} />}
          
-        />
+        >
+          <Route index element={<ContactList/>}/>
+        </Route>
         <Route path="*" element={<NotFound/>} />
+        
       </Route>
     </Routes>
    

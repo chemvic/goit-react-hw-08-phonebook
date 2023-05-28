@@ -1,5 +1,10 @@
-.massege{
+.message{
     display: flex;
     justify-content: center;
     
-}
+};
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }

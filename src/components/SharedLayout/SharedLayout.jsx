@@ -1,14 +1,14 @@
 import { Outlet } from "react-router-dom";
-import AppBar from "../AppBar";
+import CustomAppBar from "../AppBar";
 import { Suspense } from 'react';
 
-const SharedLayout =( ) => {
+const SharedLayout = () => {
 
     return(
         <>
-             
-        <main>
-        <AppBar />
+          
+        <main >
+        <CustomAppBar />
         <Suspense fallback={<div>Loading...</div>}>
           <Outlet />
         </Suspense> 

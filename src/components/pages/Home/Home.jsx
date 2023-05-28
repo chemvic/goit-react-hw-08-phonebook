@@ -1,11 +1,11 @@
 import css from "./Home.module.css";
-
+import { Typography } from '@mui/material';
 export default function Home() {
     return (
       <div className={css.container}>
-        <h1 className={css.title}>
-          Phone book welcome page
-        </h1>
+       <Typography variant="h4"  >
+       Phone book welcome page 
+       </Typography>
       </div>
     );
   }
