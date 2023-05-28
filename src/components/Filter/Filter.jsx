@@ -25,3 +25,40 @@ const Filter =()=>{
 
 }
 export default Filter;
+
+
+
+
+
+
+
+// import { useState } from 'react';
+// import { useDispatch } from 'react-redux';
+// import { changeFilter } from '../../redux/filterSlice';
+// import { Box, Input, useColorModeValue } from '@chakra-ui/react';
+
+// const Filter = () => {
+//   const [filter, setFilter] = useState('');
+//   const dispatch = useDispatch();
+
+//   const handleFilterChange = (event) => {
+//     setFilter(event.target.value);
+//     dispatch(changeFilter(event.target.value));
+//   };
+
+//   const inputBgColor = useColorModeValue('gray.100', 'gray.700');
+
+//   return (
+//     <Box py={8} px={4} bg={inputBgColor} borderRadius="md">
+//       <Input
+//         type="text"
+//         value={filter}
+//         onChange={handleFilterChange}
+//         placeholder="Enter name or number for search..."
+//         required
+//       />
+//     </Box>
+//   );
+// };
+
+// export default Filter;
