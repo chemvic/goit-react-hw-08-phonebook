@@ -1,4 +1,3 @@
-import css from "./Register.module.css";
 
 import { RegisterForm } from 'components/RegisterForm/RegisterForm';
 
