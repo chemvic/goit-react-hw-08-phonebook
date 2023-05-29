@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import {fetchContacts, addContact, deleteContact} from "redux/contacts/operations";
+import { logOut } from 'redux/auth/operations';
 
 const initialState={     
       items: [],
@@ -42,7 +43,13 @@ const contactsSlice = createSlice({
         );
         state.items.splice(index, 1);
         state.error=null;
-      })  
+      }) 
+      .addCase(logOut.fulfilled, (state)=>{
+        state.items = [];
+        state.error = null;
+        state.isLoading = false;
+      
+      }) 
     }
   });
 
@@ -54,68 +61,6 @@ export const contactsReducer = contactsSlice.reducer;
 
 
 
-// logOut: builder.mutation( {
-//   query: () => ({
-//     url: '/logout',
-//     method: 'POST',
-//   }),
-//   invalidatesTags: ['contacts'],
-// }),
-
-
-
-// import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-
-// const baseQuery = fetchBaseQuery({
-//   baseUrl: 'https://connections-api.herokuapp.com',
-//   prepareHeaders: (headers, { getState }) => {
-//     // Get the token value from the Redux store
-//     const token = getState().auth.token;
-
-//     // If we have a token, set the Authorization header
-//     if (token) {
-//       headers.set('Authorization', `Bearer ${token}`);
-//     }
-
-//     return headers;
-//   },
-// });
-
-// export const contactsApi = createApi({
-//   reducerPath: 'contactsApi',
-//   baseQuery,
-//   tagTypes: ['contacts'],
-
-//   endpoints: (builder) => ({
-//     getContacts: builder.query({
-//       query: () => `/contacts`,
-//        providesTags: ['contacts'],
-//     }),   
-  
-//   addContact: builder.mutation({
-   
-//     query: ({name, number}) => ({
-//       url: `/contacts`,
-//       method: 'POST',
-//       body: {
-//       name,
-//       number},
-//     }),    
-//     invalidatesTags: ['contacts'],
-// }),
-
-// deleteContact: builder.mutation({
-//   query: id => ({
-//     url: `/contacts/${id}`,
-//     method: 'DELETE',
-//   }),
-//   invalidatesTags: ['contacts'],
-// }),
-
-
-// }),
-// });
-// export const { useGetContactsQuery, useAddContactMutation, useDeleteContactMutation  } = contactsApi;
 
 
 
