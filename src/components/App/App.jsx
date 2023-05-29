@@ -12,7 +12,7 @@ const Contacts =lazy(()=>import("../pages/Contacts/Contacts"));
 const ContactList =lazy(()=>import("../ContactList/ContactList"));
 const Login =lazy(()=>import("../pages/Login"));
 const Register =lazy(()=>import("../pages/Register"));
-const Home =lazy(()=>import("../pages/Home/Home"));
+const Home =lazy(()=>import("../pages/Home"));
 const NotFound =lazy(()=>import("../pages/NotFound"));
 
 

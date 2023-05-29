@@ -11,7 +11,7 @@ const CustomAppBar = () => {
   const { isLoggedIn } = useAuth();
 
   return (
-    <AppBar position="static">
+    <AppBar >
       <Toolbar>
             {!isLoggedIn &&   <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
 <p>HOME</p> 
