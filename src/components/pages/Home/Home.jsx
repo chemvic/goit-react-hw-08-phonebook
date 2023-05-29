@@ -1,6 +1,7 @@
 import css from "./Home.module.css";
 import { Typography } from '@mui/material';
-export default function Home() {
+
+const Home=() =>{
     return (
       <div className={css.container}>
        <Typography variant="h4"  >
@@ -9,4 +10,4 @@ export default function Home() {
       </div>
     );
   }
-  
+  export default Home;
