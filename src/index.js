@@ -8,7 +8,7 @@ import {store, persistor} from "./redux/store.js";
 import './index.css';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/">
      <Provider store={store}>
      <PersistGate loading={null} persistor={persistor}>         
               <App />       
